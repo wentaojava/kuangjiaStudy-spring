@@ -20,12 +20,18 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 	
-	<!--利用无参构造器创建对象;id:bean的名字,要求唯一；class:对应完成的类名-->
-	<bean id="stu1" class="first.Student"></bean>
-	<bean id="date" class="java.util.Date"></bean>
-	<!--使用静态工厂方法创建对象;factory-method:指定一种静态方法，相当于Calendar.getInstance
-	容器会调用该类的静态方法创建对象-->
-	<bean id="cel1" class="java.util.Calendar" factory-method="getInstance"></bean>
-	<!--实例工厂方法;factory-bean:与上面的Id一致，相当于调用该bean的实例方法创建对象-->
-	<bean id="time" factory-bean="cel1" factory-method="getTime"></bean>
+	<!--指定作用域;scope:缺省值是singleton,单例，即只会创建一个对象
+	prototype：容器没调用一次getBean方法就会创建一个对象
+	lazy-init:为true表示延迟加载-->
+	<bean id="teacher" class="basic.Teacher" scope="prototype" lazy-init="true"></bean>
+
+	<!--指定初始化方法
+	init-method：初始化方法
+	destroy-method:销毁方法，只对作用域为单例的有效-->
+	<bean id="m1" class="basic.MessageServes" init-method="init" destroy-method="destroy"
+	scope="prototype"></bean>
+
+	<!--第一天的作业-->
+	<bean id="exempleBean" class="basic.ExempleBean" init-method="init" destroy-method="destroy"
+	lazy-init="false"></bean>
 </beans>
