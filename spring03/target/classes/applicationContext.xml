@@ -20,28 +20,9 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
-	<bean id="b1" class="IOC.B"></bean>
-	<bean id="c1" class="IOC.C"></bean>
-	<!--property:让容器调用set方法来注入依赖关系
-	其中name:指定属性名
-	ref:指定呗注入的bean的id-->
-	<bean id="a1" class="IOC.A">
-		<property name="b" ref="c1"></property>
-	</bean>
+	<!--配置组件扫描-->
+	<context:component-scan base-package="ioc"></context:component-scan>
 
-	<!--构造器注入
-	constructor-arg:容器采用构造器建立依赖关系
-	index:构造函数里参数的下标
-	ref:指定呗注入的bean的id
-	-->
-	<bean id="c2" class="IOC.Computer"></bean>
-	<bean id="m1" class="IOC.Manager">
-		<constructor-arg index="0" ref="c2"></constructor-arg>
-	</bean>
-
-	<bean id="car" class="IOC.Car">
-		<constructor-arg index="0" ref="engineer"></constructor-arg>
-	</bean>
-	<bean id="engineer" class="IOC.Engineer"></bean>
-
+	<!--读取属性文件-->
+	<util:properties id="config" location="classpath:config.properties"></util:properties>
 </beans>

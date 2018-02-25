@@ -20,28 +20,13 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
-	<bean id="b1" class="IOC.B"></bean>
-	<bean id="c1" class="IOC.C"></bean>
-	<!--property:让容器调用set方法来注入依赖关系
-	其中name:指定属性名
-	ref:指定呗注入的bean的id-->
-	<bean id="a1" class="IOC.A">
-		<property name="b" ref="c1"></property>
-	</bean>
+	<bean id="foo" class="Autowire.Foo"></bean>
+	<!--自动装配
+	autowire:容器自动建立依赖关系
+	byName：依据属性名查找对应的bean,以属性名作为bean的id;如果找不到则不注入
+	byType:依据属性类型查找对应的bean,再调用set方法来注入；如果找到多个会报错
+	constructor:与byType类似，只是会调用构造器来注入-->
+	<bean id="bar" class="Autowire.Bar" autowire="byName"></bean>
 
-	<!--构造器注入
-	constructor-arg:容器采用构造器建立依赖关系
-	index:构造函数里参数的下标
-	ref:指定呗注入的bean的id
-	-->
-	<bean id="c2" class="IOC.Computer"></bean>
-	<bean id="m1" class="IOC.Manager">
-		<constructor-arg index="0" ref="c2"></constructor-arg>
-	</bean>
-
-	<bean id="car" class="IOC.Car">
-		<constructor-arg index="0" ref="engineer"></constructor-arg>
-	</bean>
-	<bean id="engineer" class="IOC.Engineer"></bean>
 
 </beans>
