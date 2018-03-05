@@ -2,6 +2,8 @@ package controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 /**基于注解的springmvc的controller
  * 处理器类：
@@ -37,5 +39,26 @@ public class HelloController {
         return "hello";
     }
 
+    /**
+     * 重定向
+     * 方法返回值是string
+     * */
+    @RequestMapping("/login2.do")
+    public String login2(){
+        System.out.println("login2()");
+        return "redirect:hello.do";
+    }
+
+    /**
+     * 重定向
+     * 方法返回值是ModelAndView
+     * */
+    @RequestMapping("/login3.do")
+    public ModelAndView login3(){
+        System.out.println("login3()");
+        RedirectView rv=new RedirectView("hello.do");
+        ModelAndView mv=new ModelAndView(rv);
+        return mv;
+    }
 
 }

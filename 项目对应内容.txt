@@ -2,4 +2,4 @@ spring:启动spring容器，创建对象，作用域，延迟加载，生命周期
 spring02:set方法注入依赖关系,构造器注入依赖关系,自动装配，注入基本类型的值,注入集合类型的值,读取properties文件,spring表达式
 spring03:组件扫描，注解
 springmvc01:开发步骤
-springmvc02:视屏文件上传；使用注解进行开发
+springmvc02:视屏文件上传；使用注解进行开发；使用重定向方式向页面传值

@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/kuangjiaStudy.iml" filepath="$PROJECT_DIR$/.idea/kuangjiaStudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring/spring01.iml" filepath="$PROJECT_DIR$/spring/spring01.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring02/spring02.iml" filepath="$PROJECT_DIR$/spring02/spring02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring03/spring03.iml" filepath="$PROJECT_DIR$/spring03/spring03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc01/springmvc01.iml" filepath="$PROJECT_DIR$/springmvc01/springmvc01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc02/springmvc02.iml" filepath="$PROJECT_DIR$/springmvc02/springmvc02.iml" />
     </modules>
   </component>
 </project>

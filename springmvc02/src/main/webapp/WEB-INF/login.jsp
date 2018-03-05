@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<form method="post" action="/study/login1.do">
+<form method="post" action="/study/login3.do">
     账号：<input name="adminCode">
     密码：<input type="password" name="pwd">
     <input type="submit" value="submit">

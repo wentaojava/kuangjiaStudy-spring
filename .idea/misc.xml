@@ -3,12 +3,18 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/spring" />
     <file type="web" url="file://$PROJECT_DIR$/spring02" />
+    <file type="web" url="file://$PROJECT_DIR$/spring03" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc01" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc02" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/spring/pom.xml" />
         <option value="$PROJECT_DIR$/spring02/pom.xml" />
+        <option value="$PROJECT_DIR$/spring03/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc01/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc02/pom.xml" />
       </list>
     </option>
   </component>
