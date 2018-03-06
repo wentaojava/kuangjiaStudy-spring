@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="springNectoss:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="spring-nectoss.war">
+      <element id="artifact" artifact-name="springNectoss:war exploded" />
+    </root>
+  </artifact>
+</component>

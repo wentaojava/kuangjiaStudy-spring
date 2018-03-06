@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-${bmiResult}
+<span>${bmiResult}</span>
 </body>
 </html>
