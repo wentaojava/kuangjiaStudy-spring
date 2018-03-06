@@ -1,5 +1,6 @@
 package cn.wentao.nectoss.controller;
 
+import cn.wentao.nectoss.entity.Admin;
 import cn.wentao.nectoss.service.ApplicationException;
 import cn.wentao.nectoss.service.LoginService;
 import org.springframework.stereotype.Controller;
@@ -32,19 +33,16 @@ public class LoginController {
         String pwd = request.getParameter("password");
         System.out.println(admincode);
         try {
-            if (loginService.checkLogin(admincode, pwd) != null) {
-                return "redirect:toIndex.do";
-            } else {
-                return "login";
-            }
+          Admin admin=loginService.checkLogin(admincode, pwd);
         } catch (Exception e) {
             e.printStackTrace();
             if (e instanceof ApplicationException) {
-                request.setAttribute("error", e.getMessage());
+                request.setAttribute("login_failed", e.getMessage());
                 return "login";
             }
             return "error";
         }
+        return "redirect:toIndex.do";
     }
 
 

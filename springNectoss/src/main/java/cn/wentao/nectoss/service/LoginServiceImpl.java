@@ -20,7 +20,7 @@ public class LoginServiceImpl implements LoginService{
 
     public Admin checkLogin(String adminCode, String pwd) {
         Admin admin=adminDao.findByAdminCode(adminCode);
-        if(admin==null || "null".equals(admin) ){
+        if(admin==null || "".equals(admin) ){
             throw new ApplicationException("账号错误");
         }else if(!admin.getPassword().equals(pwd)) {
                 throw new ApplicationException("密码错误");
