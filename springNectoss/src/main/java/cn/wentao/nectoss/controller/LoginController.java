@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * 登录控制器
@@ -27,13 +28,17 @@ public class LoginController {
     }
 
     @RequestMapping("/login.do")
-    public String login(HttpServletRequest request) {
+    public String login(HttpServletRequest request, HttpSession session) {
         System.out.println("login()");
         String admincode = request.getParameter("adminCode");
-        String pwd = request.getParameter("password");
+        String pwd = request.getParameter("pwd");
         System.out.println(admincode);
+        System.out.println(pwd);
         try {
           Admin admin=loginService.checkLogin(admincode, pwd);
+          //登录成功，绑定session
+            session.setAttribute("admin",admin);
+
         } catch (Exception e) {
             e.printStackTrace();
             if (e instanceof ApplicationException) {

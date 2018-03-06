@@ -38,4 +38,15 @@
 		<property name="username" value="#{db.dbUserName}"></property>
 		<property name="password" value="#{db.dbPassword}"></property>
 	</bean>
+
+	<!--配置拦截器-->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<mvc:exclude-mapping path="/toLogin.do"></mvc:exclude-mapping>
+			<mvc:exclude-mapping path="/login.do"></mvc:exclude-mapping>
+			<bean class="cn.wentao.nectoss.interceptors.SomeInterceptor"></bean>
+		</mvc:interceptor>
+
+	</mvc:interceptors>
 </beans>
