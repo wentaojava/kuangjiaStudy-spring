@@ -6,3 +6,4 @@ springmvc02:视屏文件上传；使用注解进行开发；使用重定向方式向页面传值
 springNectoss:分层开发演示登录案例
 springmvc03:拦截器
 springmvc03-2；spring处理异常
+springjdbc:springjdbc的使用
